@@ -104,6 +104,21 @@ CREATE TABLE `Tmp` (
   PRIMARY KEY (`TmpId`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+-- --------------------------------------------------------
+--
+-- Estructura de tabla para la tabla `Producto`
+--
+
+CREATE TABLE `Producto` (
+  `ProductoId` int(11) NOT NULL AUTO_INCREMENT,
+  `ProductoNombre` varchar(255) NOT NULL,
+  `PerfilPropietario` varchar(255) NOT NULL,
+  `ProductoFechaCaduccion` varchar(30) NOT NULL,
+  `ProductoDetalleId` int(11),
+  PRIMARY KEY (`PerfilId`),
+  FOREIGN KEY (`ProductoDetalleId`) REFERENCES Detalle(`DetalleId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
